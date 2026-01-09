@@ -1,0 +1,105 @@
+data:
+  !include ../base_data_setting.yml
+  
+environment:
+  dotenv_path: .env
+  
+model:
+
+  # meta-llama/Llama-3.2-1B-Instruct
+  # meta-llama/Llama-3.2-3B-Instruct
+  model_name: meta-llama/Llama-3.2-1B-Instruct
+  model_type: llama3.2
+
+  encoder:
+    model_name: sentence-transformers/all-MiniLM-L6-v1
+
+  quantizer:
+    concept_size: 2048
+    embedding_dim: 512
+    beta: 0.3
+    legacy: false
+
+  decoder:
+    model_name: meta-llama/Llama-3.2-1B-Instruct
+    n_indicate_tokens: 3
+    # "llama-3.1" is similar to llama-3.2
+    # See https://docs.unsloth.ai/basics/chat-templates
+    # chatml: Supports zephyr, chatml, mistral, llama, alpaca, vicuna, vicuna_old, unsloth
+    chat_template: llama-3.1
+
+  max_seq_length: 2048
+  load_in_4bit: false
+
+train:
+  data_synthetic: !include ../gpt4o-DSynt_data_setting.yml
+  
+  # The type of the plan generated from the dataset
+  #   - explicit: the plan shows the problem-related guidance
+  #   - skeleton: the plan shows the generalized guidance
+  plan_type: explicit # explicit or skeleton
+  # What is the plan status during the reasoning
+  #   - language: the plan will be language directly
+  #   - latent: the plan will be replaced with the latent ones obtained from the concept learner
+  # We must set it to be latent here as the concept learner
+  # is to be finetuned to produce the latent space
+  reason_plan_space: latent # language or latent
+
+  epoch: 4
+  # 2e-4
+  learning_rate: 0.0002 
+  per_device_train_batch_size: 4
+  gradient_accumulation_steps: 4
+  weight_decay: 0.01
+  lr_scheduler: linear
+
+  encoder:
+    lora:
+      # Rank parameter for LoRA. The smaller this value, the fewer parameters will be modified.
+      # Choose any number > 0 ! Suggested 8, 16, 32, 64, 128
+      r: 8
+        - query
+        - key
+        - value
+        - q_proj
+        - k_proj
+        - v_proj
+        - o_proj
+        - gate_proj
+        - up_proj
+        - down_proj
+
+      modules_to_save: 
+        - indicate_embeddings
+        - quantizer
+        - prev_quant_linear
+        - post_quant_linear
+
+      # Alpha parameter for LoRA. This value determines the strength of the applied LoRA.
+      lora_alpha: 16
+      # Supports any, but = 0 is optimized
+      lora_dropout: 0
+      # Supports any, but = "none" is optimized
+      bias: none
+      use_rslora: false
+
+
+logging:
+  log_steps: 1
+  # path where to save, empty for no saving
+  checkpoint_path: experiments/checkpoints
+  result_path: experiments/results
+  logging_path: experiments/loggings
+  visualization_path: experiments/visualizations
+
+
+evaluation:
+  per_device_eval_batch_size: 4
+
+
+
+   
+
+
+
+

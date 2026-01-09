@@ -1,0 +1,21 @@
+# The settings of the synthetic data
+
+synthesized_path: examples/LatentPlan/SynthesizedData
+synthesized_name: direct-qwen14Bint8-TheoremQA
+sample_filename: Visited_Samples.json
+decomposed_filename: Decomposed_Reasoning_Steps.json
+summarized_filename: Summarized_Reasoning_Plans.json
+explicit_summarized_filename: Summarized_Reasoning_Explicit_Plans.json
+# Convert the data to the huggingface format to be uploaded
+# to the website
+hf_train_filename: train.json
+hf_test_filename: test.json
+
+hf_dataname: RDLab/math-direct-qwen14Bint8-plan
+
+ft_train_dataname: TrainPlan.json
+ft_test_dataname: TestPlan.json
+
+# Train set for the explicit plan 
+ft_train_e_dataname: TrainEPlan.json
+ft_test_e_dataname: TestEPlan.json

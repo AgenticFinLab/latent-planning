@@ -1,0 +1,121 @@
+data:
+  !include ../base_data_setting.yml
+  
+environment:
+  dotenv_path: .env
+  
+  
+model:
+
+  # To be the decoder model
+  # Qwen/Qwen2.5-0.5B-Instruct
+  # Qwen/Qwen2.5-1.5B-Instruct
+  # Qwen/Qwen2.5-3B-Instruct
+  # Qwen/Qwen2.5-7B-Instruct
+  # Qwen/Qwen2.5-14B-Instruct
+  # Qwen/Qwen2.5-32B-Instruct
+  # Qwen/Qwen2.5-72B-Instruct
+  model_name: &model_name Qwen/Qwen2.5-0.5B-Instruct
+  model_type: &model_type qwen2.5
+
+  encoder:
+    model_name: sentence-transformers/all-MiniLM-L6-v1
+
+  quantizer:
+    concept_size: 2048
+    embedding_dim: 512
+    beta: 0.3
+    legacy: false
+
+  decoder:
+    model_name: *model_name
+
+    n_indicate_tokens: 1
+    chat_template: qwen-2.5
+    system_message: You are to reconstruct a plan.
+
+  max_seq_length: 2048
+  load_in_4bit: false
+
+
+train:
+  data_synthetic: !include ../gpt4o-DSynt_data_setting.yml
+
+  # The type of the plan generated from the dataset
+  #   - explicit: the plan shows the problem-related guidance
+  #   - skeleton: the plan shows the generalized guidance
+  plan_type: skeleton # explicit or skeleton
+  # What is the plan status during the reasoning
+  #   - language: the plan will be language directly
+  #   - latent: the plan will be replaced with the latent ones obtained from the concept learner
+  reason_plan_space: latent # language or latent
+
+  epoch: 4
+  # 2e-4
+  learning_rate: 0.0002 
+  per_device_train_batch_size: 4
+  gradient_accumulation_steps: 4
+  weight_decay: 0.01
+  lr_scheduler: linear
+
+  # As the quantize loss is generally pretty small
+  # 0.1 to 0.02
+  # we set it to be 10 
+  concept_weight: 10
+
+  lora:
+      # Rank parameter for LoRA. The smaller this value, the fewer parameters will be modified.
+      # Choose any number > 0 ! Suggested 8, 16, 32, 64, 128
+      r: 16
+      # The lora target modules set here is motivated by 
+      # https://medium.com/@simon.gsponer/a-comprehensive-guide-ii-finetuning-a-bert-llm-with-lora-and-make-it-pipeline-compatible-9508e3822907
+      target_modules:
+        - query
+        - key
+        - value
+        - q_proj
+        - k_proj
+        - v_proj
+        - o_proj
+        - gate_proj
+        - up_proj
+        - down_proj
+
+      modules_to_save: 
+        - indicate_embeddings
+        - quantizer
+        - prev_quant_linear
+        - post_quant_linear
+
+      # Alpha parameter for LoRA. This value determines the strength of the applied LoRA.
+      lora_alpha: 16
+      # Supports any, but = 0 is optimized
+      lora_dropout: 0
+      # Supports any, but = "none" is optimized
+      bias: none
+      use_rslora: false
+
+
+
+logging:
+
+  log_steps: 1
+  # path where to save, empty for no saving
+  checkpoint_path: checkpoints
+  result_path: results
+  logging_path: loggings
+  visualization_path: visualizations
+
+
+evaluation:
+  per_device_eval_batch_size: 4
+
+  
+
+
+
+   
+
+
+
+
