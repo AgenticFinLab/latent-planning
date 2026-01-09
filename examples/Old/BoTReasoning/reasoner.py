@@ -9,9 +9,9 @@ from typing import List, Union, Tuple
 import aggregator
 import early_stopper
 
-from trlm.model.prompting.base import BasicSamplePrompt
-from trlm.model.thought_structure import trees
-from trlm.reasoner.structured_thought import StructuredThoughtReasoner
+from iclp.old.model.prompting.base import BasicSamplePrompt
+from iclp.old.model.thought_structure import trees
+from iclp.old.reasoner.structured_thought import StructuredThoughtReasoner
 
 
 class BoTReasoner(StructuredThoughtReasoner):

@@ -13,7 +13,7 @@ from transformers import AutoModelForCausalLM, AutoTokenizer, AutoModel, AutoCon
 
 from modules.pGen_tokens import PLAN_PLACEHOLDER, RECONSTRUCT_INDICATOR
 
-from trlm.util import template_tools
+from iclp.old.util import template_tools
 
 
 class pGenEncoder(nn.Module):

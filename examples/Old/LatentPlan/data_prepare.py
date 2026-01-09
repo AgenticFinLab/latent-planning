@@ -17,21 +17,29 @@ import logging
 
 
 from datasets import load_dataset
-
-from projinit.config import Config
-from projinit import platform_init
-
+from iclp.old.util.tools import ConfigLoader
+import yaml
+import argparse
 from modules.pGen_data import organize_plan_samples, organize_plan_reason_samples
 
 
 def _main():
     """Main session to finetune the model."""
-    # Set the platforms
-    platform_init.InitializePlatforms().login_accounts()
+    parser = argparse.ArgumentParser()
+    parser.add_argument(
+        "-c",
+        "--config",
+        dest="config_path",
+        default="",
+        help="Path to YAML config file",
+    )
+    args = parser.parse_args()
+    with open(args.config_path, "r", encoding="utf-8") as f:
+        cfg = yaml.load(f, Loader=ConfigLoader) or {}
 
     ## Stage 1. Get the learning configuration
-    train_config = Config.items_to_dict(Config().train._asdict())
-    data_synthetic_config = train_config["data_synthetic"]
+    train_config = cfg.get("train", {})
+    data_synthetic_config = train_config.get("data_synthetic", {})
     synthesized_path = data_synthetic_config["synthesized_path"]
     synthesized_name = data_synthetic_config["synthesized_name"]
     train_filename = data_synthetic_config["ft_train_dataname"]

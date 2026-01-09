@@ -4,19 +4,33 @@ A reasoning process organized as a chain thought structure.
 
 import reasoner
 
-from trlm.pipeline import Pipeline
-from trlm.model import define_model
-from trlm.model.thought_structure import thought_model
+from iclp.old.pipeline import Pipeline
+from iclp.old.model import define_model
+from iclp.old.model.thought_structure import thought_model
 
 
-from projinit.config import Config
+from iclp.old.util.tools import ConfigLoader
+import yaml
+import argparse
 
 
 def _main():
     """The core function for model running."""
+    parser = argparse.ArgumentParser()
+    parser.add_argument(
+        "-c",
+        "--config",
+        dest="config_path",
+        default="",
+        help="Path to YAML config file",
+    )
+    args = parser.parse_args()
+    with open(args.config_path, "r", encoding="utf-8") as f:
+        cfg = yaml.load(f, Loader=ConfigLoader) or {}
+
     # Set the basic llm model to be used by each component
-    model_config = Config.items_to_dict(Config().model._asdict())
-    logging_config = Config.items_to_dict(Config().logging._asdict())
+    model_config = cfg.get("model", {})
+    logging_config = cfg.get("logging", {})
 
     llm_model = define_model(model_config=model_config)
 

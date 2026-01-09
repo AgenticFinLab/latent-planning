@@ -2,11 +2,11 @@
 The prompter to organize the comment prompts for the Boosting of Thoughts (BoT).
 """
 
-from trlm.model.prompting.base import BasicSamplePrompt
-from trlm.prompt.generic import BasicThoughtPromptFormat
-from trlm.prompt import BaseSystemPrompts, ChainOutcomeCommentPrompts
+from iclp.old.model.prompting.base import BasicSamplePrompt
+from iclp.old.prompt.generic import BasicThoughtPromptFormat
+from iclp.old.prompt import BaseSystemPrompts, ChainOutcomeCommentPrompts
 
-from trlm.prompt.format_prompt import format_prompt
+from iclp.old.prompt.format_prompt import format_prompt
 
 
 class BoTCommentPrompter:

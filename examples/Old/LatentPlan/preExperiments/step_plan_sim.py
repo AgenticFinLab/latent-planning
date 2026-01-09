@@ -14,7 +14,7 @@ from commons import target_math_categories
 import h5py
 import numpy as np
 
-from trlm.dataset import define_dataset
+from iclp.old.dataset import define_dataset
 
 logging.basicConfig(level=logging.INFO)
 

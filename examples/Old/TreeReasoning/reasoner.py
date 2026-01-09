@@ -2,8 +2,8 @@
 A reasoner to perform the reasoning step by step in a tree structure.
 """
 
-from trlm.model.thought_structure import trees
-from trlm.reasoner.structured_thought import StructuredThoughtReasoner
+from iclp.old.model.thought_structure import trees
+from iclp.old.reasoner.structured_thought import StructuredThoughtReasoner
 
 
 class TreeThoughtReasoner(StructuredThoughtReasoner):

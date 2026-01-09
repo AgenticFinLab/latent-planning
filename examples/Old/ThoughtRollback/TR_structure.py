@@ -6,8 +6,8 @@ import logging
 from typing import List
 
 
-from trlm.model.thought_structure import trees
-from trlm.model.thought_structure.structure_generic import BasicNode
+from iclp.old.model.thought_structure import trees
+from iclp.old.model.thought_structure.structure_generic import BasicNode
 
 
 class ThoughtRollbackStructure(trees.DFGTreeThoughtStructure):

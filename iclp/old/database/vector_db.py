@@ -54,8 +54,8 @@ if __name__ == "__main__":
         "Make huge profits without work, earn up to $100,000 a day",
     ]
     import os
-    from trlm.database.generic import BaseDBQuestionRow
-    from trlm.database.text_db import BaseTextDBWorker
+    from iclp.old.database.generic import BaseDBQuestionRow
+    from iclp.old.database.text_db import BaseTextDBWorker
 
     # Create a text database for the data
     text_db_worker = BaseTextDBWorker(database_path="./test_vb/test_text.db")

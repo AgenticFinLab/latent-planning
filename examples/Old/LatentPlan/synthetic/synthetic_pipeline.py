@@ -16,9 +16,9 @@ from projinit.config import Config
 from torch.utils.data import DataLoader
 from transformers.utils import ModelOutput as FieldFrozenContainer
 
-from trlm.dataset import registry as dataset_registry
-from trlm.dataset.base import TextSample
-from trlm.model import llms
+from iclp.old.dataset import registry as dataset_registry
+from iclp.old.dataset.base import TextSample
+from iclp.old.model import llms
 
 
 @dataclass

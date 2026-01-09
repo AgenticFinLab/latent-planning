@@ -7,11 +7,11 @@ from typing import List, Tuple
 
 from plan_tree import PlanNode
 
-from trlm.model.thought_structure.structure_generic import (
+from iclp.old.model.thought_structure.structure_generic import (
     BasicPromptAndResponse,
 )
-from trlm.model.thought_structure import base
-from trlm.model.thought_structure import thought_model
+from iclp.old.model.thought_structure import base
+from iclp.old.model.thought_structure import thought_model
 
 
 InferenceInfo = namedtuple("InferenceInfo", {"input_prompt", "output"})

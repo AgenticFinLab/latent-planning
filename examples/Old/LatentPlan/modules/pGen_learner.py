@@ -25,7 +25,7 @@ from modules import pGen_message
 from modules import pGen_data
 from modules.endecoder import pGenEncoder, pGenDecoder
 
-from trlm.util import template_tools
+from iclp.old.util import template_tools
 
 
 @dataclass

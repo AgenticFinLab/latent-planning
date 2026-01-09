@@ -2,7 +2,7 @@
 The pipeline for the BoT reasoning process.
 """
 
-from trlm.pipeline import Pipeline
+from iclp.old.pipeline import Pipeline
 from torch.utils.data import DataLoader, SubsetRandomSampler
 
 

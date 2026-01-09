@@ -1,7 +1,7 @@
 """
 An implementation of the visualizer of the p-RAR.
 
-Note that the plot of the p-RAR thought structure is based on the 'position' 
+Note that the plot of the p-RAR thought structure is based on the 'position'
 of the node.
 
 p-RAR approach contains many types of nodes with the 'node_name':
@@ -37,7 +37,7 @@ p-RAR approach contains many types of nodes with the 'node_name':
 p-RAR approach contains many types of edges with the 'edge_type':
     - For the thought structure
         1). Reasoning
-        2). ThoughtGenerationReasoning 
+        2). ThoughtGenerationReasoning
         3). PlanSummarizationReasoning
         4). PlanExclusionReasoning
         5). PlanAssessmentReasoning
@@ -50,8 +50,8 @@ from typing import List
 
 import networkx as nx
 
-from trlm.model.thought_structure.structure_generic import BasicNode
-from trlm.model.thought_structure.visualization import BasicStructureVisualizer
+from iclp.old.model.thought_structure.structure_generic import BasicNode
+from iclp.old.model.thought_structure.visualization import BasicStructureVisualizer
 
 
 # Note:

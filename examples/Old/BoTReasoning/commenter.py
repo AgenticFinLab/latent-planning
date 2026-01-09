@@ -7,8 +7,8 @@ import torch
 
 from comment_prompter import BoTCommentPrompter
 
-from trlm.model.prompting.base import BasicSamplePrompt
-from trlm.model import define_model
+from iclp.old.model.prompting.base import BasicSamplePrompt
+from iclp.old.model import define_model
 
 
 class BoTCommenter:

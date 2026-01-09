@@ -2,8 +2,8 @@
 Thought prompts used by the thought rollback framework.
 """
 
-from trlm.prompt.thought_prompt import BaseThoughtPrompts, ThoughtGenerationPrompts
-from trlm.prompt.generic import (
+from iclp.old.prompt.thought_prompt import BaseThoughtPrompts, ThoughtGenerationPrompts
+from iclp.old.prompt.generic import (
     BasicPromptFormat,
     BasicThoughtPromptFormat,
 )

@@ -9,9 +9,9 @@ import staple_prompts
 import staple_system_prompts
 from plan_tree import PlanNode
 
-from trlm.model.thought_structure import base
-from trlm.prompt.generic import BasicThoughtPromptFormat
-from trlm.model.prompting.thought_prompter import ThoughtStructurePrompter
+from iclp.old.model.thought_structure import base
+from iclp.old.prompt.generic import BasicThoughtPromptFormat
+from iclp.old.model.prompting.thought_prompter import ThoughtStructurePrompter
 
 # from llmpebase.prompt import format_prompt
 

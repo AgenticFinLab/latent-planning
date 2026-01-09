@@ -12,7 +12,7 @@ It deserves to note that prompts of evaluation is to ensure the LLM produce an
  This also leaves space for users who want to implement more complex evaluation processes.
 """
 
-from trlm.prompt.generic import BasicThoughtPromptFormat
+from iclp.old.prompt.generic import BasicThoughtPromptFormat
 
 
 class ThoughtGenerationPrompts:

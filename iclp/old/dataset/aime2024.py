@@ -2,8 +2,8 @@
 Interface of the AIME2024 dataset.
 """
 
-from trlm.dataset.base import TextSample, VisualTextBase
-from trlm.identifier import MATH_SOLUTION_PROMPT
+from iclp.old.dataset.base import TextSample, VisualTextBase
+from iclp.old.identifier import MATH_SOLUTION_PROMPT
 
 
 class AIME2024Dataset(VisualTextBase):

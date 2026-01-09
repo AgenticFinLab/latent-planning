@@ -2,7 +2,7 @@
 A collection of system prompts used by the p-RAG.
 """
 
-from trlm.prompt.system_prompt import BaseSystemPrompts
+from iclp.old.prompt.system_prompt import BaseSystemPrompts
 
 
 class PlanSystemPrompts(BaseSystemPrompts):

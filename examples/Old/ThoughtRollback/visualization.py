@@ -1,17 +1,18 @@
 """
 Visualization of the thought structure of the ThoughtRollback framework.
 """
+
 from typing import List
 
 import matplotlib.pyplot as plt
 import networkx as nx
 
-from trlm.model.thought_structure.visualization import (
+from iclp.old.model.thought_structure.visualization import (
     BasicStructureVisualizer,
     edge_config,
     node_config,
 )
-from trlm.model.thought_structure.structure_generic import BasicNode
+from iclp.old.model.thought_structure.structure_generic import BasicNode
 
 rollback_config = {"arc_rad": 0.25}
 

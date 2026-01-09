@@ -9,9 +9,9 @@ import logging
 
 import plan_tree
 
-from trlm.model.thought_structure import base
+from iclp.old.model.thought_structure import base
 
-from trlm.util import tools
+from iclp.old.util import tools
 
 
 class PlanOperator:

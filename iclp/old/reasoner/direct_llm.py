@@ -4,9 +4,9 @@ Specifically, with the prompt as the input, the LLM will generate
 the response containing the reasoning process.
 """
 
-from trlm.model import define_model
-from trlm.model.LM.base import BaseLlmRequest
-from trlm.model.prompting.base import BasicSamplePrompt
+from iclp.old.model import define_model
+from iclp.old.model.LM.base import BaseLlmRequest
+from iclp.old.model.prompting.base import BasicSamplePrompt
 
 
 class BaseLLMReasoner:

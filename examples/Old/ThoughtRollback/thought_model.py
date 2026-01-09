@@ -5,8 +5,8 @@ The implementation of the thought model used to build the thought structure.
 import re
 from typing import List
 
-from trlm.model.thought_structure import thought_model
-from trlm.model.thought_structure import base
+from iclp.old.model.thought_structure import thought_model
+from iclp.old.model.thought_structure import base
 
 
 class TRThoughtModel(thought_model.LlmThoughtModel):

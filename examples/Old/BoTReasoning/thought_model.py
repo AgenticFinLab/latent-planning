@@ -4,9 +4,9 @@ The thought model of the BoT to build the thought structure.
 
 import torch
 
-from trlm.model.prompting.base import BasicSamplePrompt
-from trlm.model.prompting.thought_prompter import ThoughtStructurePrompter
-from trlm.model.thought_structure import thought_model
+from iclp.old.model.prompting.base import BasicSamplePrompt
+from iclp.old.model.prompting.thought_prompter import ThoughtStructurePrompter
+from iclp.old.model.thought_structure import thought_model
 
 
 class BoTThoughtModel(thought_model.LlmThoughtModel):

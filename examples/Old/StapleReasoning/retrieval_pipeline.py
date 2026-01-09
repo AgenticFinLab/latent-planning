@@ -5,7 +5,7 @@ A running pipeline for the plan optimization phase of p-RAG.
 import random
 import logging
 
-from trlm.pipeline import Pipeline
+from iclp.old.pipeline import Pipeline
 
 
 class PlanRetrievalPipeline(Pipeline):

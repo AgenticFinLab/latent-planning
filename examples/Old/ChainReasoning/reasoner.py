@@ -2,9 +2,9 @@
 A reasoner to perform the reasoning step by step in a chain structure.
 """
 
-from trlm.model.thought_structure import chains
-from trlm.model.thought_structure.base import BaseThoughtStructure
-from trlm.reasoner.structured_thought import StructuredThoughtReasoner
+from iclp.old.model.thought_structure import chains
+from iclp.old.model.thought_structure.base import BaseThoughtStructure
+from iclp.old.reasoner.structured_thought import StructuredThoughtReasoner
 
 
 class ChainThoughtReasoner(StructuredThoughtReasoner):

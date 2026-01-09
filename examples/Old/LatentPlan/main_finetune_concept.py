@@ -33,8 +33,10 @@ from transformers import TrainingArguments, DataCollatorForSeq2Seq
 from modules import pGen_data
 from modules import pGen_learner
 
-from trlm.util import template_tools
-from projinit import platform_init
+from iclp.old.util import template_tools
+from iclp.old.util.tools import ConfigLoader
+import yaml
+import argparse
 
 import wandb
 
@@ -43,25 +45,50 @@ def _main():
     """Main session to finetune the model."""
 
     ## Stage 1. Define the project
-    # Set the platforms
-    platform_init.InitializePlatforms().login_accounts()
-    # Create the project information
-    proj = platform_init.ProjectInfo()
-    wandb_run = proj.create_wandb(entity="LatentPlanReasoner")
+    parser = argparse.ArgumentParser()
+    parser.add_argument(
+        "-c",
+        "--config",
+        dest="config_path",
+        default="",
+        help="Path to YAML config file",
+    )
+    args = parser.parse_args()
+    with open(args.config_path, "r", encoding="utf-8") as f:
+        cfg = yaml.load(f, Loader=ConfigLoader) or {}
+
+    wandb_run = wandb.init(
+        entity="LatentPlanReasoner", project="LatentPlan", config=cfg
+    )
 
     ## Stage 2. Define the model
     pgen_concept_learner = pGen_learner.define_model(
-        proj.model_config, proj.train_config, wandb_run=wandb_run
+        cfg.get("model", {}), cfg.get("train", {}), wandb_run=wandb_run
     )
 
     ## Stage 3. Load and process the data
+    train_config = cfg.get("train", {})
+    data_synthetic_config = train_config.get("data_synthetic", {})
+    data_folder = data_synthetic_config.get("synthesized_path", "")
+
+    # Determine dataset names based on plan_type (logic adapted from init_project.py)
+    plan_type = train_config.get("plan_type", "skeleton")
+    if plan_type == "skeleton":
+        trainset_name = data_synthetic_config.get("ft_train_dataname", "")
+        testset_name = data_synthetic_config.get("ft_test_dataname", "")
+    elif plan_type == "explicit":
+        trainset_name = data_synthetic_config.get("ft_train_e_dataname", "")
+        testset_name = data_synthetic_config.get("ft_test_e_dataname", "")
+    else:
+        raise ValueError(f"Unknown plan_type: {plan_type}")
+
     data_files = {
-        "train": proj.trainset_name,
-        "test": proj.testset_name,
+        "train": trainset_name,
+        "test": testset_name,
     }
     dataset = load_dataset(
         "json",
-        data_dir=proj.data_folder,
+        data_dir=data_folder,
         data_files=data_files,
     )
     train_dataset = dataset["train"]

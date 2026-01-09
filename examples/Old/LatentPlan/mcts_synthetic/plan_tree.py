@@ -10,8 +10,8 @@ from dataclasses import dataclass
 import networkx as nx
 from transformers.utils import ModelOutput as FieldFrozenContainer
 
-from trlm.model.thought_structure import base
-from trlm.model.thought_structure.visualization import BasicStructureVisualizer
+from iclp.old.model.thought_structure import base
+from iclp.old.model.thought_structure.visualization import BasicStructureVisualizer
 
 
 @dataclass

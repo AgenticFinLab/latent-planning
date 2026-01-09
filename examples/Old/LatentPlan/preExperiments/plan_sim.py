@@ -18,7 +18,7 @@ from commons import target_math_categories, abbre_math_categories
 import h5py
 import numpy as np
 
-from trlm.dataset import define_dataset
+from iclp.old.dataset import define_dataset
 import trlm.util.llm_tools as llm_tools
 
 logging.basicConfig(level=logging.INFO)

@@ -3,7 +3,7 @@ A reasoner to perform adaptive reasoning with the thought rollback.
 """
 
 import TR_structure
-from trlm.reasoner.structured_thought import StructuredThoughtReasoner
+from iclp.old.reasoner.structured_thought import StructuredThoughtReasoner
 
 
 class ThoughtRollbackReasoner(StructuredThoughtReasoner):

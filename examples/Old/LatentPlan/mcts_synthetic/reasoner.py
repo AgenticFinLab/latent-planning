@@ -8,8 +8,8 @@ from embedder import GPTEmbedder
 from mcts_thought_structure import MCTSPlanStructure
 from plan_operator import PlanOperator
 
-from trlm.reasoner import structured_thought
-from trlm.model.prompting.base import BasicSamplePrompt
+from iclp.old.reasoner import structured_thought
+from iclp.old.model.prompting.base import BasicSamplePrompt
 
 
 class PlanThoughtReasoner(structured_thought.StructuredThoughtReasoner):

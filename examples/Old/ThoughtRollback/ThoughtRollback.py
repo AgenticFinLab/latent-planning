@@ -10,21 +10,35 @@ import tr_thought_prompts
 import tr_system_prompts
 
 
-from trlm.pipeline import Pipeline
-from trlm.model import define_model
+from iclp.old.pipeline import Pipeline
+from iclp.old.model import define_model
 
 # from llmpebase.prompt import get_system_prompts, get_thought_prompts
 
 
-from projinit.config import Config
+from iclp.old.util.tools import ConfigLoader
+import yaml
+import argparse
 
 
 def _main():
     """The core function for model running."""
+    parser = argparse.ArgumentParser()
+    parser.add_argument(
+        "-c",
+        "--config",
+        dest="config_path",
+        default="",
+        help="Path to YAML config file",
+    )
+    args = parser.parse_args()
+    with open(args.config_path, "r", encoding="utf-8") as f:
+        cfg = yaml.load(f, Loader=ConfigLoader) or {}
+
     # Set the basic llm model to be used by each component
-    model_config = Config.items_to_dict(Config().model._asdict())
-    logging_config = Config.items_to_dict(Config().logging._asdict())
-    # data_config = Config.items_to_dict(Config().data._asdict())
+    model_config = cfg.get("model", {})
+    logging_config = cfg.get("logging", {})
+    # data_config = cfg.get("data", {})
 
     # system_prompts = get_system_prompts(data_config)
     system_prompts = tr_system_prompts.RollbackSystemPrompts()

@@ -7,7 +7,7 @@ import logging
 from typing import List
 
 
-from trlm.model.thought_structure import base
+from iclp.old.model.thought_structure import base
 
 
 def extract_target_number(solution_str: str):

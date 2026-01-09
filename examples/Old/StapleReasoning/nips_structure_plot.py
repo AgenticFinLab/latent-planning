@@ -3,7 +3,7 @@ from plan_tree import PlanTree, PlanNode
 from visualization import stapleVisualizer, node_config, edge_config
 
 import networkx as nx
-from trlm.model.thought_structure import base
+from iclp.old.model.thought_structure import base
 
 data_path = "NIPS/plan_tree"
 plot_path = "NIPS/plot"

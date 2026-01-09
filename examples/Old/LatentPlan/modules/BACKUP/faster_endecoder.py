@@ -9,7 +9,7 @@ import torch.nn as nn
 from unsloth import FastLanguageModel
 from transformers import AutoTokenizer, AutoModel, AutoConfig
 
-from trlm.util import template_tools
+from iclp.old.util import template_tools
 
 
 class pGenEncoder(nn.Module):

@@ -18,8 +18,8 @@ import numpy as np
 from plan_tree import PlanNode, PlanTree
 from embedder import GPTEmbedder
 
-from trlm.model.thought_structure import base
-from trlm.model.thought_structure.structure_generic import BasicNode
+from iclp.old.model.thought_structure import base
+from iclp.old.model.thought_structure.structure_generic import BasicNode
 
 
 def compute_explore_prob(num_nodes: int, constant: 5):

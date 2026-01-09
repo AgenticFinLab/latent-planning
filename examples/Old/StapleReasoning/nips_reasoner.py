@@ -7,8 +7,8 @@ from typing import List
 from nips_thought_structure import NIPSPlanStructure
 from plan_tree import PlanTree
 
-from trlm.reasoner import structured_thought
-from trlm.model.prompting.base import BasicSamplePrompt
+from iclp.old.reasoner import structured_thought
+from iclp.old.model.prompting.base import BasicSamplePrompt
 
 
 class NIPSPlanThoughtReasoner(structured_thought.StructuredThoughtReasoner):

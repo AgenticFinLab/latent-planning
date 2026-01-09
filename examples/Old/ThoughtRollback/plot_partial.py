@@ -5,7 +5,7 @@ Plot partial graph.
 import visualization
 
 import networkx as nx
-from trlm.model.thought_structure import base
+from iclp.old.model.thought_structure import base
 
 
 from projinit.config import Config

@@ -30,7 +30,7 @@ from modules import pGen_reasoner
 from modules.dataset_utils import train_on_responses_only
 from projinit import config
 from projinit.platform_init import InitializePlatforms
-from trlm.util import template_tools
+from iclp.old.util import template_tools
 
 import callbacks
 import init_project

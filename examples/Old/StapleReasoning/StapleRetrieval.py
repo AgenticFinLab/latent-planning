@@ -10,18 +10,32 @@ import reasoner
 from retrieval_pipeline import PlanRetrievalPipeline
 from visualization import StapleVisualizer, node_config, edge_config
 
-from trlm.model import define_model
+from iclp.old.model import define_model
 
 # from llmpebase.prompt import get_system_prompts
-from projinit.config import Config
-from trlm.model.thought_structure.visualization import BasicStructureVisualizer
+from iclp.old.util.tools import ConfigLoader
+import yaml
+import argparse
+from iclp.old.model.thought_structure.visualization import BasicStructureVisualizer
 
 
 def _main():
     """The core function for model running."""
-    model_config = Config.items_to_dict(Config().model._asdict())
-    logging_config = Config.items_to_dict(Config().logging._asdict())
-    # data_config = Config.items_to_dict(Config().data._asdict())
+    parser = argparse.ArgumentParser()
+    parser.add_argument(
+        "-c",
+        "--config",
+        dest="config_path",
+        default="",
+        help="Path to YAML config file",
+    )
+    args = parser.parse_args()
+    with open(args.config_path, "r", encoding="utf-8") as f:
+        cfg = yaml.load(f, Loader=ConfigLoader) or {}
+
+    model_config = cfg.get("model", {})
+    logging_config = cfg.get("logging", {})
+    # data_config = cfg.get("data", {})
 
     # Define the llm model
     llm_model = define_model(model_config=model_config)

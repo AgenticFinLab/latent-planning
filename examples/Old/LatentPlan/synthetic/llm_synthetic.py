@@ -7,8 +7,8 @@ from typing import List
 from synthetic import synthetic_prompt
 from synthetic import utils as synthetic_utils
 
-from trlm.dataset import base
-from trlm.model.llms import BaseLLMInference
+from iclp.old.dataset import base
+from iclp.old.model.llms import BaseLLMInference
 
 
 def decompose_message_prompt(question: str, answer: str):

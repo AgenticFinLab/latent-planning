@@ -14,10 +14,9 @@ from transformers.tokenization_utils import PreTrainedTokenizer
 # Use a TextStreamer for continuous inference - so you can see the generation token by token, instead of waiting the whole time!
 from transformers import TextStreamer
 
-from trlm.dataset import define_dataset
-from trlm.prompt import plan_prompt
-from projinit.config import Config
-from trlm.util import template_tools
+from iclp.old.dataset import define_dataset
+from iclp.old.prompt import plan_prompt
+from iclp.old.util import template_tools
 
 
 class EvalLoopInputOutputWith(NamedTuple):

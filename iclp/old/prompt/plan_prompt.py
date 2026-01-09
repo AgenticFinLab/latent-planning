@@ -2,9 +2,9 @@
 Prompts related to the plan-based reasoning.
 """
 
-from trlm.prompt.thought_prompt import BaseThoughtPrompts, ThoughtGenerationPrompts
-from trlm.prompt.generic import BasicThoughtPromptFormat
-from trlm.prompt.system_prompt import BaseSystemPrompts
+from iclp.old.prompt.thought_prompt import BaseThoughtPrompts, ThoughtGenerationPrompts
+from iclp.old.prompt.generic import BasicThoughtPromptFormat
+from iclp.old.prompt.system_prompt import BaseSystemPrompts
 
 
 class PlanSystemPrompts(BaseSystemPrompts):

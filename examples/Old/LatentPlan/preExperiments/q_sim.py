@@ -14,7 +14,7 @@ import result_tools
 import compute_encoding
 from commons import target_math_categories, abbre_math_categories
 
-from trlm.dataset import registry as dataset_registry
+from iclp.old.dataset import registry as dataset_registry
 
 
 project_path = "examples/LatentPlan/preExperiments"

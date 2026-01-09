@@ -1,5 +1,5 @@
 """
-A prompter to organize and generate the prompts for the thought structure with 
+A prompter to organize and generate the prompts for the thought structure with
 the Thought Rollback.
 """
 
@@ -8,10 +8,10 @@ from typing import List
 import tr_system_prompts
 import tr_thought_prompts
 
-from trlm.model.prompting import thought_prompter
+from iclp.old.model.prompting import thought_prompter
 
-from trlm.model.thought_structure import base
-from trlm.prompt.generic import (
+from iclp.old.model.thought_structure import base
+from iclp.old.prompt.generic import (
     BasicSamplePrompt,
     BasicPromptFormat,
     BasicAnswerPromptFormat,

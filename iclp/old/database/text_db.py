@@ -7,8 +7,8 @@ import sqlite3
 from typing import List, Dict
 from collections import defaultdict
 
-from trlm.database.generic import BaseDBRow
-from trlm.database.generic import create_uuids
+from iclp.old.database.generic import BaseDBRow
+from iclp.old.database.generic import create_uuids
 
 
 class BaseTextDBWorker:
@@ -216,7 +216,7 @@ class BaseTextDBWorker:
 
 if __name__ == "__main__":
     # Works with a list, dataset or generator
-    from trlm.database.generic import BaseDBQuestionRow
+    from iclp.old.database.generic import BaseDBQuestionRow
     import os
 
     data = [

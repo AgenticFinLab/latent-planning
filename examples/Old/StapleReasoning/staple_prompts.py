@@ -2,8 +2,8 @@
 Plan and Thought Prompts for the p-RAR approach.
 """
 
-from trlm.prompt.thought_prompt import BaseThoughtPrompts, ThoughtGenerationPrompts
-from trlm.prompt.generic import BasicThoughtPromptFormat
+from iclp.old.prompt.thought_prompt import BaseThoughtPrompts, ThoughtGenerationPrompts
+from iclp.old.prompt.generic import BasicThoughtPromptFormat
 
 
 class PlanPrompts:

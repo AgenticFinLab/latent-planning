@@ -1,8 +1,29 @@
 """Tools used by the whole project."""
 
 import re
+import os
+import yaml
 from typing import List
 from collections import Counter
+
+
+class ConfigLoader(yaml.SafeLoader):
+    """
+    Custom YAML loader that supports the `!include` tag to include other YAML files.
+    """
+
+    def __init__(self, stream):
+        self._root = os.path.split(stream.name)[0]
+        super(ConfigLoader, self).__init__(stream)
+
+    def include(self, node):
+        filename = os.path.join(self._root, self.construct_scalar(node))
+        with open(filename, "r") as f:
+            return yaml.load(f, ConfigLoader)
+
+
+ConfigLoader.add_constructor("!include", ConfigLoader.include)
+
 
 
 def format_term(terminology: str):

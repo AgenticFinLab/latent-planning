@@ -7,7 +7,7 @@ For example, BoT uses the outcome comment to provide feedback on the reasoning c
 
 """
 
-from trlm.prompt.generic import BasicThoughtPromptFormat
+from iclp.old.prompt.generic import BasicThoughtPromptFormat
 
 
 class ChainOutcomeCommentPrompts:

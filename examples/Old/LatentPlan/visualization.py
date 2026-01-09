@@ -50,8 +50,8 @@ from typing import List
 
 import networkx as nx
 
-from trlm.model.thought_structure.structure_generic import BasicNode
-from trlm.model.thought_structure.visualization import BasicStructureVisualizer
+from iclp.old.model.thought_structure.structure_generic import BasicNode
+from iclp.old.model.thought_structure.visualization import BasicStructureVisualizer
 
 
 # Note:

@@ -4,9 +4,9 @@ The thought prompter for the Boosting of Thoughts (BoT).
 
 from typing import List, Tuple
 
-from trlm.model.prompting.base import BasicSamplePrompt, BasicPromptFormat
-from trlm.model.prompting.thought_prompter import ThoughtStructurePrompter
-from trlm.prompt import format_prompt
+from iclp.old.model.prompting.base import BasicSamplePrompt, BasicPromptFormat
+from iclp.old.model.prompting.thought_prompter import ThoughtStructurePrompter
+from iclp.old.prompt import format_prompt
 
 
 class BoTThoughtPrompter(ThoughtStructurePrompter):

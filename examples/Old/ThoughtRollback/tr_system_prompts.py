@@ -2,7 +2,7 @@
 System prompts used by the thought rollback framework.
 """
 
-from trlm.prompt.system_prompt import BaseSystemPrompts
+from iclp.old.prompt.system_prompt import BaseSystemPrompts
 
 
 class RollbackSystemPrompts(BaseSystemPrompts):

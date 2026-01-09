@@ -14,7 +14,7 @@ from commons import target_math_categories, abbre_math_categories
 
 import numpy as np
 
-from trlm.dataset import define_dataset
+from iclp.old.dataset import define_dataset
 
 
 project_path = "examples/LatentPlan/preExperiments"
