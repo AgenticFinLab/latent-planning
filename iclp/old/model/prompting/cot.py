@@ -5,8 +5,8 @@ Implementations of Chain Of Thought (CoT) prompting
 import os
 import glob
 
-from trlm.model.prompting import base
-from trlm.util import tools
+from iclp.old.model.prompting import base
+from iclp.old.util import tools
 
 
 class BBHCoTPrompting(base.BaseCoTPrompting):

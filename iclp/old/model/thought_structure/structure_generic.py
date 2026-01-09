@@ -6,8 +6,8 @@ import logging
 from typing import Union, Tuple, List
 from dataclasses import dataclass
 
-from trlm.model.prompting.base import BasicSamplePrompt
-from trlm.prompt.generic import BasicThoughtPromptFormat
+from iclp.old.model.prompting.base import BasicSamplePrompt
+from iclp.old.prompt.generic import BasicThoughtPromptFormat
 
 from transformers.utils import ModelOutput as FieldFrozenContainer
 

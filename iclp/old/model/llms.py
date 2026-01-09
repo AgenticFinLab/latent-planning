@@ -15,15 +15,16 @@ from litellm import batch_completion
 from vllm import LLM, SamplingParams
 from transformers import pipeline
 from ray.util.scheduling_strategies import PlacementGroupSchedulingStrategy
-from projinit.config import Config
+# from projinit.config import Config
 
 # Set LiteLLM logging level
 logging.getLogger("LiteLLM").setLevel(
-    getattr(
-        logging,
-        getattr(Config().logging, "LiteLLM_log_level", "WARNING").upper(),
-        logging.WARNING,
-    )
+    logging.WARNING
+    # getattr(
+    #     logging,
+    #     getattr(Config().logging, "LiteLLM_log_level", "WARNING").upper(),
+    #     logging.WARNING,
+    # )
 )
 
 
@@ -60,10 +61,10 @@ class BaseLLMInference:
             self.tokenizer = self.model.get_tokenizer()
         else:
             if "api" in self.model_type.lower():
-                if hasattr(Config().env, "dotenv_path"):
-                    dotenv_path = Config().env.dotenv_path
-                else:
-                    dotenv_path = ".env"
+                # if hasattr(Config().env, "dotenv_path"):
+                #     dotenv_path = Config().env.dotenv_path
+                # else:
+                dotenv_path = ".env"
                 load_dotenv(dotenv_path=dotenv_path)
             else:
                 # Load the model and tokenizer

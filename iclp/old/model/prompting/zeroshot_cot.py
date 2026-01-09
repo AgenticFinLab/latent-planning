@@ -2,7 +2,7 @@
 Implementations of Zero-shot CoT prompting
 """
 
-from trlm.model.prompting import base
+from iclp.old.model.prompting import base
 
 
 class TheoremQAZeroShotCoTPrompting(base.BaseZeroShotCoTPrompting):

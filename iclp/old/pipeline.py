@@ -12,19 +12,19 @@ import logging
 import torch
 from torch.utils.data import DataLoader
 
-from trlm.model.LM.base import BaseLlmRequest
-from trlm.model.prompting.base import BasePrompting
-from trlm.dataset.base import BaseDataset
-from trlm.extractor.base import BaseReExtractor, BaseLlmExtractor
-from trlm.evaluator.base import BaseEvaluator, BaseLLMEvaluator
+from iclp.old.model.LM.base import BaseLlmRequest
+from iclp.old.model.prompting.base import BasePrompting
+from iclp.old.dataset.base import BaseDataset
+from iclp.old.extractor.base import BaseReExtractor, BaseLlmExtractor
+from iclp.old.evaluator.base import BaseEvaluator, BaseLLMEvaluator
 
-from trlm.model import define_prompt, define_model
-from trlm.dataset import define_dataset
-from trlm.extractor import get as get_extractor
-from trlm.evaluator import get as get_evaluator
+from iclp.old.model import define_prompt, define_model
+from iclp.old.dataset import define_dataset
+from iclp.old.extractor import get as get_extractor
+from iclp.old.evaluator import get as get_evaluator
 
-from trlm.util import recorder
-from projinit.config import Config
+from iclp.old.util import recorder
+# from projinit.config import Config
 
 
 class Pipeline:
@@ -84,15 +84,19 @@ class Pipeline:
         self.recorder = None
 
         # Get the configuration
-        self.model_config = Config.items_to_dict(Config().model._asdict())
-        self.data_config = Config.items_to_dict(Config().data._asdict())
-        self.log_config = Config.items_to_dict(Config().logging._asdict())
+        # self.model_config = Config.items_to_dict(Config().model._asdict())
+        # self.data_config = Config.items_to_dict(Config().data._asdict())
+        # self.log_config = Config.items_to_dict(Config().logging._asdict())
+        self.model_config = {}
+        self.data_config = {}
+        self.log_config = {}
 
     def setup(self):
         """Configuration of the pipeline."""
-        eval_config = Config.items_to_dict(Config().evaluation._asdict())
+        # eval_config = Config.items_to_dict(Config().evaluation._asdict())
 
-        self.resume = eval_config["do_resume"] if "do_resume" in eval_config else True
+        # self.resume = eval_config["do_resume"] if "do_resume" in eval_config else True
+        self.resume = True
 
         if self.data_prompter is None:
             self.data_prompter = define_prompt(

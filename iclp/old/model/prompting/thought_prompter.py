@@ -5,13 +5,13 @@ Implementation of prompts for thought structure.
 import re
 from typing import List
 
-from trlm.model.thought_structure import base
-from trlm.prompt.generic import BasicThoughtPromptFormat
-from trlm.prompt import (
+from iclp.old.model.thought_structure import base
+from iclp.old.prompt.generic import BasicThoughtPromptFormat
+from iclp.old.prompt import (
     BaseSystemPrompts,
     BaseThoughtPrompts,
 )
-from trlm.prompt import format_prompt
+from iclp.old.prompt import format_prompt
 
 
 def match_head(step_head, thought):

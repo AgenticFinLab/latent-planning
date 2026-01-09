@@ -113,7 +113,7 @@ class VisualTextBase(Dataset):
         if self.hf_dataset is None:
             self.hf_dataset = load_dataset(self.hf_dataname, split=self.split)
         logging.info(
-            "   - Mapping samples to trlm format, i.e., trlm.dataset.base.TextSample"
+            "   - Mapping samples to iclp.old format, i.e., iclp.old.dataset.base.TextSample"
         )
         # Make the sample to be the desired format defined
         # in the dataset.base class

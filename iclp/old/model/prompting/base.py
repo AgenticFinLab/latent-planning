@@ -8,7 +8,7 @@ from typing import List, Union
 from dataclasses import asdict
 
 
-from trlm.prompt.generic import (
+from iclp.old.prompt.generic import (
     BasicPromptFormat,
     BasicAnswerPromptFormat,
     BasicSamplePrompt,

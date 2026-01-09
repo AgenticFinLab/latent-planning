@@ -6,8 +6,8 @@ import os
 import ast
 
 
-from trlm.identifier import OPTION_SOLUTION_PROMPT
-from trlm.dataset.base import VisualTextSample, VisualTextBase
+from iclp.old.identifier import OPTION_SOLUTION_PROMPT
+from iclp.old.dataset.base import VisualTextSample, VisualTextBase
 
 
 class MMMUDataset(VisualTextBase):

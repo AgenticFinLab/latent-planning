@@ -2,7 +2,7 @@
 Interface of the CodeAlpaca dataset.
 """
 
-from trlm.dataset.base import TextCodeSample, VisualTextBase
+from iclp.old.dataset.base import TextCodeSample, VisualTextBase
 
 
 class CodeAlpacaDataset(VisualTextBase):

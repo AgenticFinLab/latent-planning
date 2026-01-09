@@ -2,7 +2,7 @@
 
 from typing import List, Union
 
-from trlm.model.LM.base import BaseLlmRequest
+from iclp.old.model.LM.base import BaseLlmRequest
 
 
 class BaseEvaluator:

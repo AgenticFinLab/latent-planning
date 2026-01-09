@@ -4,9 +4,9 @@ Interface of the GSM8K dataset.
 
 from datasets import load_dataset
 
-from trlm.util import re_extractors
-from trlm.identifier import MATH_SOLUTION_PROMPT
-from trlm.dataset.base import TextSample, VisualTextBase
+from iclp.old.util import re_extractors
+from iclp.old.identifier import MATH_SOLUTION_PROMPT
+from iclp.old.dataset.base import TextSample, VisualTextBase
 
 
 class GSM8KDataset(VisualTextBase):

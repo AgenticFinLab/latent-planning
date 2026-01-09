@@ -2,8 +2,8 @@
 Implementations of Zero-shot prompting
 """
 
-from trlm.model.prompting import base
-from trlm.model.prompting import zeroshot_cot
+from iclp.old.model.prompting import base
+from iclp.old.model.prompting import zeroshot_cot
 
 
 class TheoremQAZeroShotPrompting(base.BaseZeroShotPrompting):

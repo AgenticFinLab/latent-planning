@@ -5,11 +5,11 @@ All prompts used in the trlm project.
 import logging
 
 
-from trlm.prompt.system_prompt import BaseSystemPrompts, GameOf24SystemPrompts
+from iclp.old.prompt.system_prompt import BaseSystemPrompts, GameOf24SystemPrompts
 
-from trlm.prompt.thought_prompt import BaseThoughtPrompts
+from iclp.old.prompt.thought_prompt import BaseThoughtPrompts
 
-from trlm.prompt.chain_prompt import (
+from iclp.old.prompt.chain_prompt import (
     ChainOutcomeCommentPrompts,
     Gameof24ChainOutcomeCommentPrompts,
 )

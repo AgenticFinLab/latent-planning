@@ -5,7 +5,7 @@ solutions from the thought structure.
 
 from typing import List
 
-from trlm.model.thought_structure import base
+from iclp.old.model.thought_structure import base
 
 
 class SolutionExtractor:

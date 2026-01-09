@@ -100,6 +100,12 @@ def extract_content(text, marker, content_pattern=r"(\d+)"):
     return None
 
 
+def extract_solution(text, flag):
+    """Extract the solution from the text."""
+    res = extract_content(text, flag)
+    return res if res is not None else ""
+
+
 def extract_equations(text_str: str, target_format="$"):
     """Extract the target equation from the text_str."""
     target_format = "$"

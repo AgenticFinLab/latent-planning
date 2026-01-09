@@ -4,7 +4,7 @@ An interface of models and prompts
 
 import logging
 
-from trlm.model.prompting import (
+from iclp.old.model.prompting import (
     base,
     fewshot,
     cot,

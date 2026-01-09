@@ -4,8 +4,8 @@ Interface of the MATH dataset.
 
 from math_verify import LatexExtractionConfig, parse
 
-from trlm.dataset.base import TextSample, VisualTextBase
-from trlm.identifier import MATH_SOLUTION_PROMPT
+from iclp.old.dataset.base import TextSample, VisualTextBase
+from iclp.old.identifier import MATH_SOLUTION_PROMPT
 
 
 class MATHDataset(VisualTextBase):

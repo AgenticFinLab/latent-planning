@@ -3,7 +3,7 @@ An implementation of the chain thought structure in which thoughts of
 one reasoning process are organized as a chain.
 """
 
-from trlm.model.thought_structure import base
+from iclp.old.model.thought_structure import base
 
 
 class ChainThoughtStructure(base.BaseThoughtStructure):

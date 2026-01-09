@@ -5,8 +5,8 @@ Interface of the TheoremQA dataset.
 import os
 
 
-from trlm.dataset.base import VisualTextSample, VisualTextBase
-from trlm.identifier import MATH_SOLUTION_PROMPT
+from iclp.old.dataset.base import VisualTextSample, VisualTextBase
+from iclp.old.identifier import MATH_SOLUTION_PROMPT
 
 
 class TheoremQADataset(VisualTextBase):

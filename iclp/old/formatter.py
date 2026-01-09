@@ -18,7 +18,7 @@ To support the multimodal inputs, we refer to:
     The support for the multiple images will be added in the future.
 """
 
-from trlm.dataset import base
+from iclp.old.dataset import base
 
 
 def map_sample(

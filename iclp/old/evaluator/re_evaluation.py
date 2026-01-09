@@ -2,7 +2,7 @@
 A base evaluator using `re` of Python of achieve the evaluation.
 """
 
-from trlm.evaluator import base
+from iclp.old.evaluator import base
 
 
 def convert_item(item_str: str):

@@ -6,10 +6,10 @@ from typing import List, Type
 
 from torch import nn
 
-from trlm.model.thought_structure.base import BaseThoughtStructure
-from trlm.model.prompting.base import BasicSamplePrompt
-from trlm.model.thought_structure.visualization import BasicStructureVisualizer
-from trlm.model.thought_structure.solution_extractor import SolutionExtractor
+from iclp.old.model.thought_structure.base import BaseThoughtStructure
+from iclp.old.model.prompting.base import BasicSamplePrompt
+from iclp.old.model.thought_structure.visualization import BasicStructureVisualizer
+from iclp.old.model.thought_structure.solution_extractor import SolutionExtractor
 
 
 class StructuredThoughtReasoner:

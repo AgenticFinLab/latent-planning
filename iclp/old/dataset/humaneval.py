@@ -2,7 +2,7 @@
 Interface of the HumanEval dataset.
 """
 
-from trlm.dataset.base import TextCodeSample, VisualTextBase
+from iclp.old.dataset.base import TextCodeSample, VisualTextBase
 
 
 class HumanEvalDataset(VisualTextBase):

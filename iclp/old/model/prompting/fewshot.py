@@ -4,7 +4,7 @@ Implementations of Few-shot prompting, which is the fewshot prompt engineering.
 
 import random
 
-from trlm.model.prompting import base
+from iclp.old.model.prompting import base
 
 
 class ProblemFewShotPrompting(base.BasePrompting):

@@ -9,7 +9,7 @@ import matplotlib.pyplot as plt
 import networkx as nx
 from networkx.drawing.nx_pydot import graphviz_layout
 
-from trlm.model.thought_structure.structure_generic import BasicNode
+from iclp.old.model.thought_structure.structure_generic import BasicNode
 
 
 # Note:

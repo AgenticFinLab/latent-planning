@@ -14,16 +14,16 @@ from typing import List, Union, Dict
 
 import networkx as nx
 
-from trlm.model.prompting.base import BasicSamplePrompt
-from trlm.model.thought_structure.visualization import BasicStructureVisualizer
-from trlm.model.thought_structure.structure_generic import (
+from iclp.old.model.prompting.base import BasicSamplePrompt
+from iclp.old.model.thought_structure.visualization import BasicStructureVisualizer
+from iclp.old.model.thought_structure.structure_generic import (
     BasicNode,
     BasicEdge,
     BasicEvaluation,
     BasicSimilarity,
     BasicPromptAndResponse,
 )
-from trlm.model.thought_structure.thought_model import LlmThoughtModel
+from iclp.old.model.thought_structure.thought_model import LlmThoughtModel
 
 
 class BaseStructure:

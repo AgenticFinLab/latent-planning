@@ -7,15 +7,15 @@ from typing import List, Tuple
 
 import torch
 
-from trlm.model import define_model
-from trlm.model.prompting.thought_prompter import ThoughtStructurePrompter
-from trlm.model.thought_structure.structure_generic import (
+from iclp.old.model import define_model
+from iclp.old.model.prompting.thought_prompter import ThoughtStructurePrompter
+from iclp.old.model.thought_structure.structure_generic import (
     BasicEvaluation,
     BasicSimilarity,
     BasicPromptAndResponse,
 )
-from trlm.model.thought_structure import base
-from trlm.extractor.re_extraction import extract_solution
+from iclp.old.model.thought_structure import base
+from iclp.old.util.re_extractors import extract_solution
 
 
 class LlmThoughtModel:

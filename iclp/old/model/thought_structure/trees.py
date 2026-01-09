@@ -21,7 +21,7 @@ import logging
 import networkx as nx
 from networkx.algorithms.dag import dag_longest_path
 
-from trlm.model.thought_structure import base
+from iclp.old.model.thought_structure import base
 
 
 class DFGTreeThoughtStructure(base.BaseThoughtStructure):

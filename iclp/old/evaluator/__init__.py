@@ -5,7 +5,7 @@ groundtruths.
 
 import logging
 
-from trlm.evaluator.re_evaluation import (
+from iclp.old.evaluator.re_evaluation import (
     GeneralEvaluator,
 )
 

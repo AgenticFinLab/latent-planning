@@ -19,7 +19,7 @@ from typing import Dict, List
 
 import networkx as nx
 
-from trlm.model.thought_structure import base
+from iclp.old.model.thought_structure import base
 
 
 class GraphTreeThoughtStructure(base.BaseThoughtStructure):
