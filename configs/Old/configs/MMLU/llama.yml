@@ -1,0 +1,57 @@
+# A configuration file for demo purpose.
+# It contains all setable parameters.
+
+
+data:
+
+  data_name: MMLU
+  data_path: data
+
+  download_url: http://people.eecs.berkeley.edu/~hendrycks/data.tar # mainly for website
+
+environment:
+
+  # The name of the project
+  project_name: LLMPE 
+  
+  # Fix the see for reproducible
+  seed: 15
+  
+
+model:
+  model_name: meta-llama/Llama-2-7b-chat-hf # name of the model used by the project 
+
+  model_type: llama # llama or falcon or llama_pipeline
+
+  generation_settings:
+    temperature: 0.7
+    max_length: 200
+    #max_new_tokens: 1000
+    top_p: 0.75
+    top_k: 40 
+    num_beams: 1
+    do_sample: true
+
+  pretrained_models_path: experiments/pretrained_models
+
+train:
+
+
+logging:
+  # path where to save, empty for no saving
+  experiment_path: experiments
+  checkpoint_path: experiments/checkpoints
+  result_path: experiments/results
+  logging_path: experiments/loggings
+  visualization_path: experiments/visualizations
+
+evaluation:
+
+  n_shots: 5
+ 
+  # set the hyper parameters for performance
+  performance:
+
+
+
+
